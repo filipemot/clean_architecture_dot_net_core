@@ -1,5 +1,5 @@
 
-# Projeto Demonstração de Clean Architecture em .Net Core 
+# Projeto Demonstração de Clean Architecture em .Net Core ********** Em Desenvolvimento
 
 **Nomenclatura de Classes**
 - Solution: CleanArch
