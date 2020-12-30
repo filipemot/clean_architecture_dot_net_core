@@ -1,0 +1,10 @@
+/CleanArch/CleanArch.Application/obj
+/CleanArch/CleanArch.Application/bin
+/CleanArch/CleanArch.Domain/bin
+/CleanArch/CleanArch.Domain/obj
+/CleanArch/CleanArch.Infra.Data/obj
+/CleanArch/CleanArch.Infra.Data/bin
+/CleanArch/CleanArch.Infra.IoC/obj
+/CleanArch/CleanArch.Infra.IoC/bin
+/CleanArch/CleanArch.MVC/obj
+/CleanArch/CleanArch.MVC/bin
