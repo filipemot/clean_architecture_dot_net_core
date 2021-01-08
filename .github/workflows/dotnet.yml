@@ -8,7 +8,8 @@ on:
 
 jobs:
   build:
-
+    env:
+      CAMINHO_PROJETO_WEBAPP: ./CleanArch/CleanArch.MVC/CleanArch.MVC
     runs-on: ubuntu-latest
 
     steps:
@@ -18,6 +19,6 @@ jobs:
       with:
         dotnet-version: 5.0.100-rc.2.20479.15  
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build ${{ env.CAMINHO_PROJETO_WEBAPP }}  --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test ${{ env.CAMINHO_PROJETO_WEBAPP }} --no-build --verbosity normal
