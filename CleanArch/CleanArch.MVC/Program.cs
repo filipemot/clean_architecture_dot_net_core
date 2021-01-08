@@ -26,13 +26,15 @@ namespace CleanArch.MVC
                 {
                     var context = services.GetRequiredService<ApplicationDbContext>();
                     context.Database.Migrate();
-                    host.Run();
+                    
                 } catch (Exception ex)
                 {
                     var logger = scope.ServiceProvider.GetRequiredService<ILogger>();
                     logger.LogError(ex, "Ocorreu um erro");
                 }
             }
+
+            host.Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
