@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     env:
-      CAMINHO_PROJETO_WEBAPP: ./CleanArch/CleanArch.MVC/CleanArch.MVC
+      CAMINHO_PROJETO_WEBAPP: ./CleanArch/CleanArch.MVC
     runs-on: ubuntu-latest
 
     steps:
