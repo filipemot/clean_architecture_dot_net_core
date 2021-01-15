@@ -1,0 +1,26 @@
+name: .NET
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    env:
+      CAMINHO_PROJETO_WEBAPP: ./CleanArch/CleanArch.MVC
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.100-rc.2.20479.15 
+    - name: Restore
+      run: dotnet restore ${{ env.CAMINHO_PROJETO_WEBAPP }} 
+    - name: Build
+      run: dotnet build ${{ env.CAMINHO_PROJETO_WEBAPP }}  --no-restore
+    - name: Test
+      run: dotnet test ${{ env.CAMINHO_PROJETO_WEBAPP }} --no-build --verbosity normal
