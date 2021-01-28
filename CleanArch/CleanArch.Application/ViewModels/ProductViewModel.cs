@@ -23,6 +23,7 @@ namespace CleanArch.Application.ViewModels
         [Required(ErrorMessage = "o Preco é requirido")]
         [Range(1, 9999.99)]
         [MaxLength(100)]
+        [DisplayFormat(DataFormatString="{0:C2}")]
         [DisplayName("Preco")]
         public decimal Price { set; get; }    
     }
