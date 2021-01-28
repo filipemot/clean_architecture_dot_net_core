@@ -5,6 +5,10 @@
     <UserSecretsId>aspnet-CleanArch.MVC-BA648F05-D205-4887-A83F-EC766446A206</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
+  </ItemGroup>
+
 
 
   <ItemGroup>
