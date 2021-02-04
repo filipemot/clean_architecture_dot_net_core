@@ -43,5 +43,71 @@ namespace CleanArch.MVC.Controllers
 
             return View(product);
         }
+
+        [HttpGet()]
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null) return NotFound();
+
+            var productVM = await _productService.GetById(id);
+
+            if(productVM == null) return NotFound();
+
+            return View(productVM);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]//Validação de Falsificação entre sites CSRF
+        public IActionResult Edit([Bind("Id,Name,Description,Price")] ProductViewModel productVm)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _productService.Update(productVm);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(productVm);
+        }
+
+        [HttpGet()]
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null) return NotFound();
+
+            var productVM = await _productService.GetById(id);
+
+            if (productVM == null) return NotFound();
+
+            return View(productVM);
+        }
+
+        [HttpGet()]
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null) return NotFound();
+
+            var productVM = await _productService.GetById(id);
+
+            if (productVM == null) return NotFound();
+
+            return View(productVM);
+        }
+
+        [HttpPost(), ActionName("Delete")]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            _productService.Remove(id);
+
+            return RedirectToAction("Index");
+        }
     }
 }
