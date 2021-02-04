@@ -17,7 +17,7 @@
 - CleanArch.Application - Domain
 - CleanArch.Infra.Data - Domain
 - CleanArch.Infra.IoC - Domain, Application, Infra.Data
-- CleanArch.MVC - Infra.Data, Infra.IoC
+- CleanArch.MVC - Application, Infra.IoC
 
 # Execução
 
